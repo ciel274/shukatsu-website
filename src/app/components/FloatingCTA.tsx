@@ -83,15 +83,9 @@ export default function FloatingCTA() {
             </div>
           </div>
 
-          <Link to="/install" className="block">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full px-5 py-2.5 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              インストール詳細を見る
-            </motion.button>
-          </Link>
+          <div className="w-full px-5 py-2.5 bg-gray-200 text-gray-400 rounded-xl font-semibold text-center cursor-not-allowed text-sm">
+            現在審査中です
+          </div>
         </div>
       </div>
     </motion.div>

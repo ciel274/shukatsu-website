@@ -85,16 +85,9 @@ export default function Navigation() {
               />
             </motion.a>
           ))}
-          <Link to="/install">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative px-6 py-2.5 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/30 overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="relative z-10">インストール</span>
-            </motion.button>
-          </Link>
+          <div title="現在 Chrome Web Store 審査中です" className="relative px-6 py-2.5 bg-gray-200 text-gray-400 rounded-xl font-semibold cursor-not-allowed text-sm">
+            審査中
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -132,11 +125,9 @@ export default function Navigation() {
               {item.label}
             </a>
           ))}
-          <Link to="/install">
-            <button className="w-full px-6 py-2.5 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold">
-              インストール
-            </button>
-          </Link>
+          <div className="w-full px-6 py-2.5 bg-gray-200 text-gray-400 rounded-xl font-semibold text-center cursor-not-allowed text-sm">
+            審査中
+          </div>
         </div>
       </motion.div>
     </motion.nav>

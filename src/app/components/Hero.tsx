@@ -99,13 +99,14 @@ const Hero = memo(() => {
 
         {/* CTA Buttons */}
         <div className="flex items-center justify-center gap-4 flex-wrap">
-          <Link to="/install">
-            <MagneticButton className="px-10 py-5 bg-[#0d9488] text-white rounded-[1.5rem] font-black transition-all flex items-center gap-3 shadow-2xl shadow-teal-500/20 hover:bg-teal-500">
+          <div className="flex flex-col items-center gap-1">
+            <MagneticButton disabled className="px-10 py-5 bg-gray-300 text-gray-500 rounded-[1.5rem] font-black flex items-center gap-3 shadow-xl cursor-not-allowed opacity-70">
               <Chrome className="w-5 h-5" />
               <span>無料でインストール</span>
               <ArrowRight className="w-5 h-5" />
             </MagneticButton>
-          </Link>
+            <span className="text-xs text-gray-400 font-medium">現在 Chrome Web Store 審査中です</span>
+          </div>
           <MagneticButton className="px-10 py-5 bg-white/60 backdrop-blur-xl border border-white/20 text-[#0f172a] rounded-[1.5rem] font-black hover:bg-white transition-all shadow-xl shadow-slate-200/20 flex items-center gap-2">
             <Play className="w-4 h-4 fill-current ml-0.5" />
             <span>デモを見る</span>

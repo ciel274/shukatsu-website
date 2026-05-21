@@ -201,24 +201,14 @@ export default function CTA() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="flex items-center justify-center gap-4 flex-wrap"
               >
-                <Link to="/install">
-                  <MagneticButton className="group relative px-10 py-5 bg-white text-[#0d9488] rounded-2xl font-bold transition-all duration-300 flex items-center gap-3 shadow-2xl overflow-hidden">
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-teal-50 via-cyan-50 to-transparent"
-                      initial={{ x: '-100%' }}
-                      whileHover={{ x: '100%' }}
-                      transition={{ duration: 0.6 }}
-                    />
-                    <Chrome className="w-6 h-6 relative z-10" />
-                    <span className="relative z-10 text-lg">無料でインストール</span>
-                    <motion.div
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowRight className="w-6 h-6 relative z-10" />
-                    </motion.div>
-                  </MagneticButton>
-                </Link>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="group relative px-10 py-5 bg-white/50 text-gray-400 rounded-2xl font-bold flex items-center gap-3 shadow-xl cursor-not-allowed opacity-70">
+                    <Chrome className="w-6 h-6" />
+                    <span className="text-lg">無料でインストール</span>
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                  <span className="text-sm text-white/60">現在 Chrome Web Store 審査中です</span>
+                </div>
               </motion.div>
 
               {/* Platform Icons */}

@@ -68,8 +68,6 @@ export default function Story() {
             className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
           >
             就活生として感じた「不便」から生まれたツール。
-            <br />
-            すべては、後輩たちの就活を少しでも楽にしたいという想いから始まりました。
           </motion.p>
         </div>
 
