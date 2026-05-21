@@ -58,7 +58,7 @@ export default function KanbanShowcase() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={containerRef} className="py-32 bg-gradient-to-b from-gray-50/50 to-white overflow-hidden relative">
+    <section ref={containerRef} className="py-32 bg-white overflow-hidden relative">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
