@@ -1,0 +1,36 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+@import './animations.css';
+
+/* Writing Tool Enhancements */
+.editor-content img {
+  display: block;
+  user-select: none;
+  max-width: 100%;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 1.5rem 0;
+  transition: all 0.2s;
+}
+
+.editor-content img:hover, .editor-content img:focus {
+  outline: 4px solid #0d9488;
+  outline-offset: 4px;
+}
+
+.editor-content a {
+  color: #0d9488;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.editor-content table {
+  margin: 2rem 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.editor-content table td {
+  min-height: 50px;
+}
