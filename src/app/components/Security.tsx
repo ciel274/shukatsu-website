@@ -171,7 +171,7 @@ export default function Security() {
               whileInView={{ y: 0, opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, type: 'spring' }}
-              className="group relative"
+              className="group relative h-full"
             >
               {/* Glow */}
               <motion.div
@@ -187,7 +187,7 @@ export default function Security() {
               />
 
               {/* Card */}
-              <div className="relative bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-gray-200/50 hover:border-white/60 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="relative h-full bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-gray-200/50 hover:border-white/60 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
                 {/* Animated Background */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
