@@ -62,11 +62,20 @@ const Hero = memo(() => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/60 backdrop-blur-xl rounded-full mb-8 shadow-lg shadow-teal-500/5 border border-white/20"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full mb-8 shadow-lg border"
+          style={{
+            background: 'linear-gradient(135deg, rgba(20,184,166,0.12), rgba(16,185,129,0.08))',
+            borderColor: 'rgba(20,184,166,0.3)',
+          }}
         >
-          <Sparkles className="w-4 h-4 text-[#0d9488]" />
-          <span className="text-sm bg-gradient-to-r from-[#0d9488] to-[#0f766e] bg-clip-text text-transparent font-bold">
-            完全無料・オープンベータ版 公開中
+          <motion.div
+            animate={{ rotate: [0, 15, -15, 0] }}
+            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+          >
+            <Sparkles className="w-4 h-4 text-teal-500" />
+          </motion.div>
+          <span className="text-sm bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent font-bold tracking-wide">
+            ✓ Chrome Web Store 公開中 · 完全無料
           </span>
         </motion.div>
 
