@@ -79,8 +79,8 @@ const FeatureCard = memo(({ feature, index }: { feature: typeof features[0]; ind
           <h3 className="text-xl font-black text-slate-900 mb-3 tracking-tight">{feature.title}</h3>
           <p className="text-sm text-slate-500 font-bold leading-relaxed mb-6">{feature.description}</p>
 
-          <div className="flex items-center gap-2 text-[#0d9488] font-black text-xs uppercase tracking-widest opacity-60 group-hover:opacity-100 transition-all">
-            <span>Learn More</span>
+          <div className="flex items-center gap-2 text-[#0d9488] font-black text-xs tracking-widest opacity-60 group-hover:opacity-100 transition-all">
+            <span>詳しく見る</span>
             <ArrowRight className="w-4 h-4" />
           </div>
         </div>

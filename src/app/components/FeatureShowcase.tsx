@@ -133,7 +133,7 @@ const showcaseFeatures = [
   },
   {
     title: 'ドラッグ&ドロップで\n進捗管理',
-    description: 'カンバンボードで選考フェーズを視覚的に管理。「未応募」→「ES提出済」→「1次面接」→「内定」とカードを動かすだけで選考状況が一目でわかります。',
+    description: '「未応募」→「ES提出済」→「1次面接」→「内定」の列にカードを置くだけ。どの会社がどの段階か、開けば一目でわかります。',
     icon: Columns3,
     displayIcon: Columns3,
     color: 'from-blue-500 to-cyan-500',
@@ -141,7 +141,7 @@ const showcaseFeatures = [
   },
   {
     title: 'ES回答を\n企業ごとに保存',
-    description: '「志望動機」「学生時代頑張ったこと」など、よく聞かれる質問の回答をストック。企業ごとにカスタマイズして使い回せます。',
+    description: '「志望動機」「ガクチカ」など書いた回答を企業ごとに保存できます。次の企業に使うときはコピペして少し直すだけ。毎回ゼロから書かなくてよくなります。',
     icon: FileText,
     displayIcon: FileText,
     color: 'from-purple-500 to-pink-500',
@@ -198,10 +198,9 @@ export default function FeatureShowcase() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-6xl font-bold text-[#0f172a] mb-6 tracking-tight"
           >
-            こんな使い方を
-            <br />
+            実際に
             <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-              想定しています
+              こう使います
             </span>
           </motion.h2>
 
@@ -212,7 +211,7 @@ export default function FeatureShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto font-light"
           >
-            自分が就活中に「こんな機能があったら便利だな」と思ったものを形にしました。
+            就活中に自分が欲しいと思って作りました。
           </motion.p>
         </div>
 
@@ -289,12 +288,6 @@ export default function FeatureShowcase() {
                     {feature.description}
                   </p>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-1 bg-gradient-to-r from-gray-300 to-transparent rounded-full" />
-                    <span className="text-sm text-gray-400 font-medium">
-                      開発中の機能です
-                    </span>
-                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -314,8 +307,8 @@ export default function FeatureShowcase() {
               <Lightbulb className="w-5 h-5 text-white" />
             </div>
             <p className="text-gray-700">
-              <span className="font-semibold text-[#0f172a]">他にも便利な機能を構想中。</span>
-              <span className="text-gray-500 ml-2">あなたのアイデアも募集しています！</span>
+              <span className="font-semibold text-[#0f172a]">他にも機能を追加していく予定です。</span>
+              <span className="text-gray-500 ml-2">使ってみて気になることがあれば教えてください。</span>
             </p>
           </div>
         </motion.div>
