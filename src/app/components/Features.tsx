@@ -99,7 +99,7 @@ export default function Features() {
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="features" ref={containerRef} className="py-32 bg-slate-50/50 relative overflow-hidden">
+    <section id="features" ref={containerRef} className="py-32 bg-white relative overflow-hidden">
       <motion.div style={{ opacity }} className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-full mb-8 shadow-sm border border-slate-100">
