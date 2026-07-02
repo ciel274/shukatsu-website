@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useMotionValue } from 'motion/react';
-import { MousePointer2, Columns3, FileText, Lock, Calendar, Database, ArrowRight, Sparkles } from 'lucide-react';
+import { MousePointer2, Columns3, FileText, Lock, Calendar, Database, ArrowRight, ClipboardPaste } from 'lucide-react';
 import { useRef, useState, memo } from 'react';
 
 const features = [
@@ -44,6 +44,13 @@ const features = [
     description: 'GoogleカレンダーやTimeTreeへの締切自動登録。',
     color: 'from-pink-500 to-rose-500',
     bgColor: 'from-pink-500/10 to-rose-500/10',
+  },
+  {
+    icon: ClipboardPaste,
+    title: 'マイページ自動入力',
+    description: '氏名・住所・学校・GPA など、事前に登録しておくと各企業のマイページにワンクリックで入力できます。同じことを何度も書く手間がなくなります。',
+    color: 'from-violet-500 to-purple-500',
+    bgColor: 'from-violet-500/10 to-purple-500/10',
   },
 ];
 
@@ -110,7 +117,7 @@ export default function Features() {
           <h2 className="text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tighter">
             すべての機能を、<span className="text-teal-500">一箇所に。</span>
           </h2>
-          <p className="text-lg text-slate-500 font-bold max-w-2xl mx-auto">就活に必要なあらゆる機能を、一つのダッシュボードで統合管理。</p>
+          <p className="text-lg text-slate-500 font-bold max-w-2xl mx-auto">選考管理からES・書類まで、これ一つで足ります。</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

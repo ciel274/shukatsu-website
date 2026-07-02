@@ -101,9 +101,9 @@ const Hero = memo(() => {
           transition={{ delay: 0.2 }}
           className="text-xl md:text-2xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed font-bold"
         >
-          就活をハックするローカル完結型・ダッシュボード
+          選考管理・ES・マイページ自動入力が、これ一つで全部できます
           <br />
-          <span className="text-[#0d9488]">ログイン不要・データ収集なし・広告なし</span>
+          <span className="text-[#0d9488]">ログイン不要・データはあなたのPCだけに保存</span>
         </motion.p>
 
         {/* CTA Button */}
