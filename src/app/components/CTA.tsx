@@ -188,7 +188,7 @@ export default function CTA() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
               >
-                オープンベータ版、準備中。無料でインストールして、
+                完全無料・今すぐインストールして、
                 <br />
                 <span className="font-semibold">煩雑な就活管理をシンプルに</span>
               </motion.p>
@@ -202,12 +202,17 @@ export default function CTA() {
                 className="flex items-center justify-center gap-4 flex-wrap"
               >
                 <div className="flex flex-col items-center gap-2">
-                  <div className="group relative px-10 py-5 bg-white/50 text-gray-400 rounded-2xl font-bold flex items-center gap-3 shadow-xl cursor-not-allowed opacity-70">
+                  <a
+                    href="https://chromewebstore.google.com/detail/%E5%B0%B1%E6%B4%BBdash/lkfkcnncfglcaakolloipfndhaedkmfl?hl=ja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative px-10 py-5 bg-white text-[#0d9488] rounded-2xl font-bold flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  >
                     <Chrome className="w-6 h-6" />
                     <span className="text-lg">無料でインストール</span>
-                    <ArrowRight className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm text-white/60">現在 Chrome Web Store 審査中です</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <span className="text-sm text-white/70">Chrome Web Store で公開中</span>
                 </div>
               </motion.div>
 

@@ -100,12 +100,18 @@ const Hero = memo(() => {
         {/* CTA Buttons */}
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <div className="flex flex-col items-center gap-1">
-            <MagneticButton disabled className="px-10 py-5 bg-gray-300 text-gray-500 rounded-[1.5rem] font-black flex items-center gap-3 shadow-xl cursor-not-allowed opacity-70">
-              <Chrome className="w-5 h-5" />
-              <span>無料でインストール</span>
-              <ArrowRight className="w-5 h-5" />
-            </MagneticButton>
-            <span className="text-xs text-gray-400 font-medium">現在 Chrome Web Store 審査中です</span>
+            <a
+              href="https://chromewebstore.google.com/detail/%E5%B0%B1%E6%B4%BBdash/lkfkcnncfglcaakolloipfndhaedkmfl?hl=ja"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MagneticButton className="px-10 py-5 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-[1.5rem] font-black flex items-center gap-3 shadow-xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all">
+                <Chrome className="w-5 h-5" />
+                <span>無料でインストール</span>
+                <ArrowRight className="w-5 h-5" />
+              </MagneticButton>
+            </a>
+            <span className="text-xs text-gray-400 font-medium">Chrome Web Store で公開中</span>
           </div>
           <MagneticButton className="px-10 py-5 bg-white/60 backdrop-blur-xl border border-white/20 text-[#0f172a] rounded-[1.5rem] font-black hover:bg-white transition-all shadow-xl shadow-slate-200/20 flex items-center gap-2">
             <Play className="w-4 h-4 fill-current ml-0.5" />

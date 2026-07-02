@@ -100,7 +100,7 @@ export default function InstallGuide() {
           >
             インストールは簡単。2分以内に就活管理を開始できます。
             <br />
-            <span className="text-sm text-amber-600 font-semibold">※現在オープンベータ版準備中です</span>
+            <span className="text-sm text-teal-600 font-semibold">Chrome Web Store で公開中・完全無料</span>
           </motion.p>
         </div>
 
@@ -172,7 +172,10 @@ export default function InstallGuide() {
           className="text-center"
         >
           <div className="inline-flex flex-col gap-4 items-center">
-            <motion.button
+            <motion.a
+              href="https://chromewebstore.google.com/detail/%E5%B0%B1%E6%B4%BBdash/lkfkcnncfglcaakolloipfndhaedkmfl?hl=ja"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold transition-all duration-300 flex items-center gap-3 hover:shadow-2xl overflow-hidden"
@@ -181,7 +184,7 @@ export default function InstallGuide() {
               <Chrome className="w-6 h-6 relative z-10" />
               <span className="relative z-10 text-lg">Chrome Web Storeで入手</span>
               <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-2 transition-transform" />
-            </motion.button>
+            </motion.a>
 
             <p className="text-sm text-gray-500">
               対応ブラウザ: Google Chrome 最新版

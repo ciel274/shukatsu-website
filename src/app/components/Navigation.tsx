@@ -85,9 +85,15 @@ export default function Navigation() {
               />
             </motion.a>
           ))}
-          <div title="現在 Chrome Web Store 審査中です" className="relative px-6 py-2.5 bg-gray-200 text-gray-400 rounded-xl font-semibold cursor-not-allowed text-sm">
-            審査中
-          </div>
+          <a
+            href="https://chromewebstore.google.com/detail/%E5%B0%B1%E6%B4%BBdash/lkfkcnncfglcaakolloipfndhaedkmfl?hl=ja"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative px-6 py-2.5 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity flex items-center gap-2"
+          >
+            <Chrome className="w-4 h-4" />
+            無料でインストール
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -125,9 +131,15 @@ export default function Navigation() {
               {item.label}
             </a>
           ))}
-          <div className="w-full px-6 py-2.5 bg-gray-200 text-gray-400 rounded-xl font-semibold text-center cursor-not-allowed text-sm">
-            審査中
-          </div>
+          <a
+            href="https://chromewebstore.google.com/detail/%E5%B0%B1%E6%B4%BBdash/lkfkcnncfglcaakolloipfndhaedkmfl?hl=ja"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full px-6 py-2.5 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold text-center text-sm hover:opacity-90 transition-opacity block"
+            onClick={() => setIsOpen(false)}
+          >
+            無料でインストール
+          </a>
         </div>
       </motion.div>
     </motion.nav>
