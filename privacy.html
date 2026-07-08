@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー — 就活Dash!</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #0a0f1e;
+    color: #cbd5e1;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+  .header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+    padding: 48px 24px 40px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 4px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #93c5fd;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .updated {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 40px;
+    text-align: right;
+  }
+  .section {
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #93c5fd;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(37,99,235,0.3);
+  }
+  p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+  }
+  ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  li {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+  }
+  .highlight {
+    background: rgba(37,99,235,0.1);
+    border: 1px solid rgba(37,99,235,0.25);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .highlight p {
+    margin: 0;
+    color: #bfdbfe;
+    font-weight: 500;
+  }
+  a { color: #60a5fa; }
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">Privacy Policy</div>
+  <h1>プライバシーポリシー</h1>
+  <p>就活Dash! Chrome 拡張機能</p>
+</div>
+
+<div class="container">
+  <div class="updated">最終更新日：2026年7月8日</div>
+
+  <div class="section">
+    <div class="highlight">
+      <p>📌 就活Dash! が収集したすべてのデータは、お使いのデバイスのブラウザ内にのみ保存されます。外部サーバーへの送信は一切行いません。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>1. 収集する情報</h2>
+    <p>就活Dash! は、以下の情報をお客様のブラウザのローカルストレージ（<code>chrome.storage.local</code>）に保存します。</p>
+    <ul>
+      <li>氏名・住所・電話番号・メールアドレスなどの基本プロフィール情報（自動入力機能のために登録したもの）</li>
+      <li>応募企業名・選考ステータス・ES設問と回答・マイページURL</li>
+      <li>締切日・面接予定などのスケジュール情報</li>
+      <li>志望度・メモなど任意で入力した就活関連データ</li>
+    </ul>
+    <p>これらの情報はすべてお客様自身が入力したものであり、本拡張機能が自動的に収集することはありません。</p>
+  </div>
+
+  <div class="section">
+    <h2>2. 情報の利用目的</h2>
+    <p>収集した情報は、以下の目的のみに使用されます。</p>
+    <ul>
+      <li>エントリーフォームおよびマイページへの自動入力</li>
+      <li>応募企業の選考状況の表示・管理</li>
+      <li>締切カレンダーへのイベント表示</li>
+      <li>ES・面接準備情報の表示</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. データの保存場所と外部送信</h2>
+    <div class="highlight">
+      <p>🔒 すべてのデータはお使いのブラウザ内（chrome.storage.local）にのみ保存されます。開発者を含む第三者がアクセスすることはできません。外部サーバーへのデータ送信は一切行いません。</p>
+    </div>
+    <p>パスワードなどの機密情報は、Web Crypto API（AES-GCM 256bit）を使用してブラウザ内で暗号化した上で保存されます。</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Google アカウントの利用（オプション機能）</h2>
+    <p>Google カレンダー連携機能を使用する場合、Google アカウントへのアクセス許可を求めます。</p>
+    <ul>
+      <li>取得するのは Google カレンダーへの書き込み権限のみです</li>
+      <li>取得したアクセストークンはブラウザ内にのみ保存され、外部へ送信されません</li>
+      <li>Google カレンダーへの書き込みは、お客様が明示的にボタンを押した場合のみ実行されます</li>
+      <li>Google アカウントの連携はいつでも解除できます</li>
+    </ul>
+    <p>Google のプライバシーポリシーについては <a href="https://policies.google.com/privacy" target="_blank">こちら</a> をご確認ください。</p>
+  </div>
+
+  <div class="section">
+    <h2>5. 第三者への情報提供</h2>
+    <p>就活Dash! は、お客様の個人情報を第三者に販売・提供・開示することは一切ありません。</p>
+  </div>
+
+  <div class="section">
+    <h2>6. データの削除</h2>
+    <p>拡張機能をアンインストールするか、拡張機能の設定画面からデータをリセットすることで、保存されたすべてのデータを削除できます。</p>
+  </div>
+
+  <div class="section">
+    <h2>7. 未成年者のプライバシー</h2>
+    <p>就活Dash! は13歳未満の児童を対象としておらず、意図的に児童の個人情報を収集することはありません。</p>
+  </div>
+
+  <div class="section">
+    <h2>8. ポリシーの変更</h2>
+    <p>本プライバシーポリシーは予告なく変更される場合があります。重要な変更がある場合は、拡張機能のアップデートを通じてお知らせします。</p>
+  </div>
+
+  <div class="section">
+    <h2>9. お問い合わせ</h2>
+    <p>プライバシーに関するご質問は、以下のメールアドレスまでご連絡ください。</p>
+    <p><a href="mailto:reopon1524@gmail.com">reopon1524@gmail.com</a></p>
+  </div>
+
+  <div class="footer">
+    © 2026 就活Dash! — All rights reserved.
+  </div>
+</div>
+</body>
+</html>
