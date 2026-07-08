@@ -1,64 +1,37 @@
 import { motion } from 'motion/react';
-import { Mail, MessageSquare, Send, MapPin, Clock, Phone, Lightbulb } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, MessageSquare, ExternalLink, Bug, Lightbulb, HelpCircle, Shield, FileText } from 'lucide-react';
+
+// GASスクリプト実行後にここを更新してください
+const CONTACT_FORM_URL = 'https://forms.gle/n5NAZoJh5LXmN4C87';
+
+const CONTACT_TYPES = [
+  { icon: Bug,       label: 'バグ・不具合の報告',         color: 'from-red-500 to-rose-500' },
+  { icon: Lightbulb, label: '機能リクエスト・改善提案',   color: 'from-yellow-500 to-amber-500' },
+  { icon: HelpCircle,label: '使い方・操作方法の質問',     color: 'from-blue-500 to-cyan-500' },
+  { icon: Shield,    label: 'プライバシー・データに関するご質問', color: 'from-purple-500 to-violet-500' },
+  { icon: FileText,  label: 'その他',                     color: 'from-teal-500 to-emerald-500' },
+];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <section id="contact" className="py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Background */}
+      {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity }}
           className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-br from-teal-400/20 to-transparent rounded-full blur-3xl"
         />
         <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.2, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-          }}
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.2, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity }}
           className="absolute bottom-20 -right-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-3xl"
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <motion.div
             initial={{ y: 30, opacity: 0, scale: 0.8 }}
             whileInView={{ y: 0, opacity: 1, scale: 1 }}
@@ -68,7 +41,7 @@ export default function Contact() {
           >
             <MessageSquare className="w-4 h-4 text-[#0d9488]" />
             <span className="text-sm bg-gradient-to-r from-[#0d9488] to-[#0f766e] bg-clip-text text-transparent font-semibold">
-              Contact Us
+              Contact
             </span>
           </motion.div>
 
@@ -89,196 +62,82 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto font-light"
           >
-            ご質問やフィードバックがございましたら、お気軽にお問い合わせください。
+            ご質問・バグ報告・機能リクエストはいつでもお気軽にどうぞ。
             <br />
-            <span className="text-[#0d9488] font-medium">24時間以内に返信いたします</span>
+            <span className="text-[#0d9488] font-medium">通常2〜3営業日以内にご返信いたします</span>
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info Cards */}
-          <div className="space-y-6">
-            {[
-              {
-                icon: Mail,
-                title: 'メール',
-                content: 'support@jobhunt-dashboard.jp',
-                color: 'from-teal-500 to-emerald-500',
-              },
-              {
-                icon: Clock,
-                title: '営業時間',
-                content: '平日 9:00 - 18:00',
-                color: 'from-blue-500 to-cyan-500',
-              },
-              {
-                icon: Phone,
-                title: '電話',
-                content: '03-1234-5678',
-                color: 'from-purple-500 to-pink-500',
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ x: -60, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ x: 8 }}
-                className="group relative"
-              >
-                <motion.div
-                  animate={{
-                    opacity: [0.1, 0.2, 0.1],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.5,
-                  }}
-                  className={`absolute -inset-1 bg-gradient-to-br ${item.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-all duration-500`}
-                />
-                <div className="relative bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-4">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                    <item.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500 font-medium mb-1">{item.title}</div>
-                    <div className="font-semibold text-[#0f172a]">{item.content}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ y: 60, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-2 relative"
-          >
-            <div className="absolute -inset-1 bg-gradient-to-br from-teal-500 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20" />
-
-            <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl border border-gray-200/50 shadow-2xl p-8">
-              {isSubmitted ? (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="flex flex-col items-center justify-center py-20"
-                >
-                  <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
-                    <Send className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#0f172a] mb-2">送信完了！</h3>
-                  <p className="text-gray-600">お問い合わせありがとうございます。24時間以内に返信いたします。</p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-[#0f172a] mb-2">
-                        お名前 <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent transition-all duration-300"
-                        placeholder="山田 太郎"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-[#0f172a] mb-2">
-                        メールアドレス <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent transition-all duration-300"
-                        placeholder="example@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#0f172a] mb-2">
-                      お問い合わせ種別 <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent transition-all duration-300"
-                    >
-                      <option value="">選択してください</option>
-                      <option value="general">一般的な質問</option>
-                      <option value="bug">バグ報告</option>
-                      <option value="feature">機能リクエスト</option>
-                      <option value="other">その他</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#0f172a] mb-2">
-                      メッセージ <span className="text-red-500">*</span>
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="お問い合わせ内容をご記入ください..."
-                    />
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="submit"
-                    className="group relative w-full px-8 py-4 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:shadow-teal-500/40 transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden"
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
-                      initial={{ x: '-100%' }}
-                      whileHover={{ x: '100%' }}
-                      transition={{ duration: 0.6 }}
-                    />
-                    <Send className="w-5 h-5 relative z-10" />
-                    <span className="relative z-10">送信する</span>
-                  </motion.button>
-                </form>
-              )}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* FAQ Link */}
+        {/* Contact type chips */}
         <motion.div
-          initial={{ y: 60, opacity: 0 }}
+          initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-4 bg-white/80 backdrop-blur-xl rounded-2xl border border-gray-200/50 shadow-lg">
-            <MessageSquare className="w-5 h-5 text-[#0d9488]" />
-            <span className="text-gray-700">
-              よくある質問は
-              <a href="#faq" className="text-[#0d9488] font-semibold hover:underline ml-1">
-                FAQページ
+          {CONTACT_TYPES.map((t, i) => (
+            <motion.a
+              key={i}
+              href={CONTACT_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 text-sm font-semibold text-gray-700 group"
+            >
+              <div className={`w-6 h-6 rounded-lg bg-gradient-to-br ${t.color} flex items-center justify-center flex-shrink-0`}>
+                <t.icon className="w-3.5 h-3.5 text-white" />
+              </div>
+              {t.label}
+            </motion.a>
+          ))}
+        </motion.div>
+
+        {/* Main CTA card */}
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative max-w-xl mx-auto"
+        >
+          <div className="absolute -inset-1 bg-gradient-to-br from-teal-500 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20" />
+          <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl border border-gray-200/50 shadow-2xl p-10 text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-teal-500/30">
+              <MessageSquare className="w-8 h-8 text-white" />
+            </div>
+
+            <h3 className="text-2xl font-bold text-[#0f172a] mb-3">フォームからお問い合わせ</h3>
+            <p className="text-gray-500 mb-8 text-sm leading-relaxed">
+              お問い合わせの種類を選んで内容を送信してください。<br />
+              返信希望の場合はメールアドレスをご記入ください。
+            </p>
+
+            <motion.a
+              href={CONTACT_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#0d9488] to-[#0f766e] text-white rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl hover:shadow-teal-500/40 transition-all duration-300"
+            >
+              <MessageSquare className="w-5 h-5" />
+              お問い合わせフォームを開く
+              <ExternalLink className="w-4 h-4 opacity-70" />
+            </motion.a>
+
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-400">
+              <Mail className="w-4 h-4" />
+              <span>または </span>
+              <a
+                href="mailto:reopon1524@gmail.com"
+                className="text-[#0d9488] font-medium hover:underline"
+              >
+                reopon1524@gmail.com
               </a>
-              をご覧ください
-            </span>
+              <span>へ直接メール</span>
+            </div>
           </div>
         </motion.div>
       </div>
